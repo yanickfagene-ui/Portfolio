@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yanick Fagene | HSE & Environmental Engineering</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background:#0B0E11;
+  color:#E6EAF2;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:60px 20px 30px;
+}
+header h1{font-size:52px}
+header p{color:#AAB4C8;margin-top:8px}
+
+.lang-buttons button{
+  margin:6px;
+  padding:6px 12px;
+  background:#1C2233;
+  border:none;
+  border-radius:6px;
+  color:#E6EAF2;
+  cursor:pointer;
+}
+.lang-buttons button:hover{
+  background:#00E5FF;
+  color:#000;
+}
+
+/* SECTION */
+.project{
+  max-width:1300px;
+  margin:70px auto;
+  padding:0 16px;
+}
+
+.project-title{
+  color:#00E5FF;
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+/* VIDEO */
+.video-wrapper{
+  width:100%;
+  height:70vh;
+  background:#000;
+  border-radius:16px;
+  overflow:hidden;
+}
+video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* DOWNLOAD */
+.download-box{
+  text-align:center;
+  margin:24px 0;
+}
+.download-btn{
+  display:inline-block;
+  background:#00E5FF;
+  color:#000;
+  padding:14px 28px;
+  border-radius:10px;
+  font-weight:700;
+}
+.download-btn:hover{opacity:.85}
+.license{
+  font-size:14px;
+  color:#AAB4C8;
+  margin-top:10px;
+}
+
+/* PDF */
+.pdf-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:30px;
+}
+
+.pdf-box{
+  background:#000;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.pdf-box iframe{
+  width:100%;
+  height:65vh;
+  border:none;
+}
+
+.pdf-actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px;
+  background:#0B0E11;
+}
+
+.pdf-actions a{
+  background:#00E5FF;
+  color:#000;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:700;
+}
+
+.notice{
+  font-size:13px;
+  color:#AAB4C8;
+  text-align:right;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#AAB4C8;
+}
+footer a{color:#0A66C2;font-weight:600}
+</style>
+
+<script>
+const T={
+pt:{
+sub:"Engenharia Ambiental | HSE | Inovação",
+zDesc:"Sistema inteligente de monitoramento de EPIs em tempo real, desenvolvido para ambientes industriais, com detecção automática de não conformidades e alerta imediato.",
+checkTitle:"HSE Checklists",
+download:"⬇ Download",
+notice:"REQUISITE A TUA CHECKLIST PERSONALIZADA",
+license:"Licença de teste por 7 dias mediante solicitação"
+},
+en:{
+sub:"Environmental Engineering | HSE | Innovation",
+zDesc:"Real-time intelligent PPE monitoring system designed for industrial environments, detecting non-compliance and triggering immediate alerts.",
+checkTitle:"HSE Checklists",
+download:"⬇ Download",
+notice:"REQUEST YOUR CUSTOM CHECKLIST",
+license:"7-day trial license available upon request"
+},
+fr:{
+sub:"Génie de l'Environnement | HSE | Innovation",
+zDesc:"Système intelligent de surveillance des EPI en temps réel avec alertes immédiates.",
+checkTitle:"Checklists HSE",
+download:"⬇ Télécharger",
+notice:"DEMANDEZ VOTRE CHECKLIST PERSONNALISÉE",
+license:"Licence d’essai de 7 jours sur demande"
+},
+es:{
+sub:"Ingeniería Ambiental | HSE | Innovación",
+zDesc:"Sistema inteligente de monitoreo de EPP en tiempo real con alertas inmediatas.",
+checkTitle:"Listas de Verificación HSE",
+download:"⬇ Descargar",
+notice:"SOLICITA TU CHECKLIST PERSONALIZADA",
+license:"Licencia de prueba de 7 días disponible bajo solicitud"
+}
+};
+
+function setLang(l){
+document.getElementById("subtitle").innerText=T[l].sub;
+document.getElementById("z-desc").innerText=T[l].zDesc;
+document.getElementById("check-title").innerText=T[l].checkTitle;
+document.querySelectorAll(".download-text").forEach(e=>e.innerText=T[l].download);
+document.querySelectorAll(".notice-text").forEach(e=>e.innerText=T[l].notice);
+document.getElementById("license").innerText=T[l].license+" — yanickfagene@gmail.com";
+}
+</script>
+</head>
+
+<body>
+
+<header>
+<h1>Yanick Fagene</h1>
+<p id="subtitle">Environmental Engineering | HSE | Innovation</p>
+<div class="lang-buttons">
+<button onclick="setLang('pt')">PT</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('es')">ES</button>
+</div>
+</header>
+
+<section class="project">
+<h3 class="project-title">ZOTTO – Intelligent PPE Detection System</h3>
+<p id="z-desc"></p>
+
+<div class="video-wrapper">
+<video autoplay muted loop playsinline>
+<source src="assets/videos/DEMO-ZOTTO.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="download-box">
+<a class="download-btn" href="https://drive.google.com/uc?export=download&id=16cubWNppFgMn2FSebkM_s_rYpk5oFCjK" target="_blank">
+<span class="download-text">⬇ Download</span> ZOTTO
+</a>
+<div class="license" id="license">
+Licença de teste por 7 dias mediante solicitação — yanickfagene@gmail.com
+</div>
+</div>
+</section>
+
+<section class="project">
+<h3 id="check-title" class="project-title">HSE Checklists</h3>
+
+<div class="pdf-grid">
+
+<div class="pdf-box">
+<iframe src="assets/pdfs/en/Daily_Safety_Checklist.pdf"></iframe>
+<div class="pdf-actions">
+<a href="assets/pdfs/en/Daily_Safety_Checklist.pdf" download class="download-text">⬇ Download</a>
+<div class="notice">
+<span class="notice-text">REQUISITE A TUA CHECKLIST PERSONALIZADA</span><br>
+<b>yanickfagene@gmail.com</b>
+</div>
+</div>
+</div>
+
+<div class="pdf-box">
+<iframe src="assets/pdfs/en/Annual_HSE_Objectives.pdf"></iframe>
+<div class="pdf-actions">
+<a href="assets/pdfs/en/Annual_HSE_Objectives.pdf" download class="download-text">⬇ Download</a>
+<div class="notice">
+<span class="notice-text">REQUISITE A TUA CHECKLIST PERSONALIZADA</span><br>
+<b>yanickfagene@gmail.com</b>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+Developed by Yanick Fagene |
+<a href="https://www.linkedin.com/in/yanick-fagene-/" target="_blank">LinkedIn</a>
+</footer>
+
+</body>
+</html>
